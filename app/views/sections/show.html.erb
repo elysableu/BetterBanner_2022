@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="sectionstudent_layout">
+  <div class="sectionstudent_details">
+    <%= render @section %>
+  </div>
+  
+  <div class="registered_sectionstudents">
+    <h4>Registered Students</h4>
+      <%= link_to "Add student to this section", register_student_path %>
+      
+      <ul>
+        <% @section.students.each do |student| %>
+          <li><%= student.student_info %></li>
+        <%end%>
+      </ul>
+      
+  </div>
+</div>
+
+<div>
+  <div class="submit"><%= button_to "Destroy this section", @section, method: :delete %></div>
+
+  <div class="edit_nav_button">
+    <%= link_to "Edit this section", edit_section_path(@section) %> |
+    <%= link_to "Back to sections", sections_path %> 
+  </div>
+</div>
+
+

@@ -1,0 +1,36 @@
+<%= form_with(model: section) do |form| %>
+  <% if section.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+        <% section.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :crn, style: "display: block" %>
+    <%= form.text_field :crn %>
+  </div>
+
+  <div>
+    <%= form.label :course_id, style: "display: block" %>
+    <%= form.collection_select :course_id, Course.all, :id, :specific_course %>
+  </div>
+
+  <div>
+    <%= form.label :semester_id, style: "display: block" %>
+    <%= form.collection_select :semester_id, Semester.all, :id, :specific_semester %>
+  </div>
+
+  <div class="register_student_form">
+    <%= form.label "Add Students to this Section", style: "display: block" %>
+    <%= form.collection_check_boxes(:student_ids, @students, :id, :name) %>
+    <%#= form.collection_select :student_id, Student.all, :id, :student_info %>
+  </div>
+
+  <div class="submit"><%= form.submit %></div>
+<% end %>

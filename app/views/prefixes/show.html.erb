@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @prefix %>
+
+<div>
+  <div class="submit"><%= button_to "Destroy this prefix", @prefix, method: :delete %></div>
+  
+  <div class="edit_nav_button">
+    <%= link_to "Back to prefixes", prefixes_path %> |
+    <%= link_to "Edit this prefix", edit_prefix_path(@prefix) %> 
+  </div>
+</div>

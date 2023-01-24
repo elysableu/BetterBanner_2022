@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Sections</h2>
+
+<div class="index_nav">
+
+  <div class="new_button"><%= link_to "New section", new_section_path %></div>
+
+  <div class="search_bar">
+    <%= form_tag(search_sections_url, method: "get") do %>
+      <%= label_tag(:query, "Search for:")%>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+</div>
+
+<div id="sections">
+  <% @sections.each do |section| %>
+    <%= render section %>
+    <p>
+      <%= link_to "Show this section", section %>
+    </p>
+  <% end %>
+</div>
+
+

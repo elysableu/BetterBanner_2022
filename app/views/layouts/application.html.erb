@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Better Banner</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header>
+      <h1>Better Banner</h1>
+      <nav>
+          <a href= "/homepage"><button>Homepage</button></a>
+          <a href="/students"><button>Students</button></a>
+          <a href="/prefixes"><button>Prefixes</button></a>
+          <a href="/courses"><button>Courses</button></a>
+          <a href="/semesters"><button>Semesters</button></a>
+          <a href="/sections"><button>Sections</button></a>
+      </nav>
+    </header>
+
+    <%= yield %>
+
+    <footer>
+    </footer>
+  </body>
+</html>

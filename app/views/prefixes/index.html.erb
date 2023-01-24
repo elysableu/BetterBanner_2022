@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Department Prefixes</h2>
+
+<div class="index_nav">
+  <div class="new_button"><%= link_to "New prefix", new_prefix_path %></div>
+
+  <div class="search_bar">
+    <%= form_tag(search_prefixes_url, method: "get") do %>
+      <%= label_tag(:query, "Search for:")%>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+</div>
+<div id="prefixes">
+  <% @prefixes.each do |prefix| %>
+    <%= render prefix %>
+    <div class="show_button">
+      <%= link_to "Show this prefix", prefix %>
+    </div>
+  <% end %>
+</div>
+
+

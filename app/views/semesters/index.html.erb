@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Semesters</h2>
+
+<div class="index_nav">
+
+  <div class="new_button"><%= link_to "New semester", new_semester_path %></div>
+
+</div>
+
+<div id="semesters">
+  <% @semesters.each do |semester| %>
+    <%= render semester %>
+    <p>
+      <%= link_to "Show this semester", semester %>
+    </p>
+  <% end %>
+</div>
+
+

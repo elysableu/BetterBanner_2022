@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+section01:
+  crn: 356607
+  course: course01
+  semester: semester01
+
+section02:
+  crn: 339944
+  course: course02
+  semester: semester02

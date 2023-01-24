@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Courses</h2>
+
+<div class="index_nav">
+
+  <div class="new_button"><%= link_to "New course", new_course_path %></div>
+
+  <div class="search_bar">
+    <%= form_tag(search_courses_url, method: "get") do %>
+      <%= label_tag(:query, "Search for:")%>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+</div>
+
+<div id="courses">
+  <% @courses.each do |course| %>
+    <%= render course %>
+    <p>
+      <%= link_to "Show this course", course %>
+    </p>
+  <% end %>
+</div>
+
+

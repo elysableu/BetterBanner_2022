@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Students</h2>
+
+<div class="index_nav">
+
+  <div class="new_button"><%= link_to "New student", new_student_path %></div>
+
+  <div class="search_bar">
+    <%= form_tag(search_students_url, method: "get") do %>
+      <%= label_tag(:query, "Search for:")%>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+
+</div>
+
+<% @students.each do |student| %>
+  <div id="students">
+    <div class="student_s_img">
+    </div>
+    
+    <div class="student_brief_info">
+      <br>
+      <%= student.name %>
+      <br>
+      <%= student.ninehundrednumber %>
+      <br>
+    </div>
+    
+    <p>
+      <%= link_to "Show this student", student %>
+    </p>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+course01:
+  prefix: prefix01
+  number: 3710
+  name: Web Application Development
+  
+course02:
+  prefix: prefix02
+  number: 4340
+  name: History of Mathematics
